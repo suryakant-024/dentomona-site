@@ -60,7 +60,7 @@ appointmentForm.addEventListener("submit", async (e) => {
   try {
 
     const response = await fetch(
-      "https://rakhirakhi879.app.n8n.cloud/webhook-test/appointment",
+      "https://rakhirakhi879.app.n8n.cloud/webhook/appointment",
       {
         method: "POST",
         headers: {
