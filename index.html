@@ -144,7 +144,7 @@
         <h3>Education</h3>
 
         <p>
-          BDS from Bharti Vidyapeeth Deemed University, Pune and I have completed my MDS in Prosthodontics.
+          BDS from Bharti Vidyapeeth Deemed University, Pune and I have completed my  MDS in Prosthodontics.
         </p>
       </div>
 
@@ -738,6 +738,33 @@ allowfullscreen>
   </div>
 
 </footer>
+
+  
+   <!-- AI ASSISTANT -->
+  <div class="ai-toggle" id="aiToggle" role="button" aria-label="Open AI assistant" tabindex="0">
+    💬
+  </div>
+
+  <div class="ai-chatbox" id="aiChatbox" aria-hidden="true">
+    <div class="ai-header">
+      <span>Dentomona AI Assistant</span>
+      <button class="ai-close" id="aiClose" aria-label="Close AI assistant">✕</button>
+    </div>
+
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-bot-message">
+        Hello 👋
+        How can I help you today?
+      </div>
+    </div>
+
+    <div class="ai-options">
+      <button type="button" onclick="handleAI('doctor')">About Doctor</button>
+      <button type="button" onclick="handleAI('address')">Clinic Address</button>
+      <button type="button" onclick="handleAI('timing')">Clinic Timing</button>
+      <button type="button" onclick="handleAI('appointment')">Book Appointment</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 
