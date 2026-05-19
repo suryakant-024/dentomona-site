@@ -13,6 +13,23 @@ section{
   box-sizing:border-box;
 }
 
+html,
+body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+img,
+iframe,
+video,
+embed,
+object{
+  max-width:100%;
+  width:100%;
+  height:auto;
+  display:block;
+}
+
 body{
   font-family:'Poppins',sans-serif;
   background:#f8fafc;
@@ -1260,6 +1277,8 @@ button:hover{
   right:20px;
   width:60px;
   height:60px;
+  min-width:60px;
+  min-height:60px;
   background:#0077ff;
   color:#fff;
   border-radius:50%;
@@ -1270,13 +1289,14 @@ button:hover{
   cursor:pointer;
   z-index:9999;
   box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  touch-action:manipulation;
 }
 
 .ai-chatbox{
   position:fixed;
   bottom:90px;
   right:20px;
-  width:320px;
+  width:clamp(280px, 90vw, 320px);
   max-height:420px;
   background:#fff;
   border-radius:15px;
@@ -1359,8 +1379,25 @@ button:hover{
 
 @media screen and (max-width:480px) {
   .ai-chatbox {
-    width:90%;
-    right:5%;
+    width:calc(100% - 32px);
+    right:16px;
     bottom:90px;
+  }
+
+  .ai-toggle{
+    right:16px;
+    bottom:16px;
+  }
+
+  .ai-header,
+  .ai-options,
+  .ai-messages{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .ai-options button{
+    min-width:0;
+    flex:1 1 100%;
   }
 }
