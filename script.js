@@ -90,4 +90,70 @@ appointmentForm.addEventListener("submit", async (e) => {
 
   }
 
-});
+}); 
+
+const aiToggle = document.getElementById("aiToggle");
+const aiChatbox = document.getElementById("aiChatbox");
+const aiMessages = document.getElementById("aiMessages");
+const aiClose = document.getElementById("aiClose");
+
+if (aiToggle && aiChatbox) {
+  const toggleChat = () => {
+    const isOpen = aiChatbox.getAttribute("aria-hidden") === "false";
+    aiChatbox.style.display = isOpen ? "none" : "block";
+    aiChatbox.setAttribute("aria-hidden", isOpen ? "true" : "false");
+  };
+
+  aiToggle.addEventListener("click", toggleChat);
+  aiToggle.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleChat();
+    }
+  });
+
+  if (aiClose) {
+    aiClose.addEventListener("click", () => {
+      aiChatbox.style.display = "none";
+      aiChatbox.setAttribute("aria-hidden", "true");
+    });
+  }
+}
+
+function handleAI(type){
+
+  let message = "";
+
+  if(type === "doctor"){
+    message =
+    "Dr. Monika Kumari is a dental expert specializing in smile restoration and advanced digital dentistry.";
+  }
+
+  if(type === "address"){
+    message =
+    "Dentomona Multispeciality Dental Clinic is located at Gayatri Market, Kurji, Patna.";
+  }
+
+  if(type === "timing"){
+    message =
+    "Clinic timing is Monday to Saturday: 9 AM – 6 PM and Sunday: 10 AM – 2 PM.";
+  }
+
+  if(type === "appointment"){
+    message =
+    "Please fill the appointment form below to book your appointment.";
+
+    document
+      .getElementById("appointment")
+      .scrollIntoView({behavior:"smooth"});
+  }
+
+  if (aiMessages) {
+    aiMessages.innerHTML += `
+      <div class="ai-bot-message">
+        ${message}
+      </div>
+    `;
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+  }
+}
