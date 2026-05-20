@@ -364,7 +364,9 @@ nav a:hover{
 
 /* PEDIATRIC */
 .pediatric{
-  background-image:url('https://images.unsplash.com/photo-1629909615184-74f495363b67?q=80&w=1200&auto=format&fit=crop');
+  background-image: url('Third.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 
@@ -1382,6 +1384,7 @@ button:hover{
     width:calc(100% - 32px);
     right:16px;
     bottom:90px;
+    max-width:calc(100% - 32px);
   }
 
   .ai-toggle{
@@ -1401,3 +1404,182 @@ button:hover{
     flex:1 1 100%;
   }
 }
+
+/* CORE MOBILE RESPONSIVE FIXES */
+
+section,
+.hero,
+.about,
+.services,
+.videos,
+.appointment,
+.contact,
+.main-footer,
+.navbar {
+  max-width:100%;
+  width:100%;
+}
+
+.hero-right,
+.about-image,
+.about-content,
+.service-card,
+.appointment-form,
+.appointment-right,
+.timing-box,
+.quick-box,
+.emergency-box,
+.contact-card,
+.contact-map,
+.footer-box {
+  min-width:0;
+}
+
+@media screen and (max-width:900px) {
+  body {
+    overflow-x:hidden;
+  }
+
+  .hero,
+  .about,
+  .services,
+  .videos,
+  .appointment,
+  .contact,
+  .main-footer {
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  .hero-buttons,
+  .stats,
+  .contact-btns {
+    width:100%;
+  }
+
+  .hero-buttons a,
+  .hero-buttons button,
+  .call-btn,
+  .whatsapp-btn,
+  .appointment-btn,
+  .appointment-submit,
+  .contact-whatsapp-btn,
+  .emergency-btn,
+  .contact-call-btn {
+    width:100%;
+    max-width:100%;
+  }
+
+  .timing-row {
+    flex-wrap:wrap;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .quick-card {
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:flex-start;
+  }
+
+  .quick-card > div {
+    min-width:0;
+  }
+
+  .input-box,
+  .input-grid {
+    width:100%;
+  }
+
+  .input-box input,
+  .input-box select,
+  .input-box textarea {
+    min-width:0;
+  }
+
+  .appointment {
+    padding-bottom:140px;
+  }
+
+  .appointment-right {
+    gap:18px;
+  }
+
+  .waiting,
+  .hero h1,
+  .hero h3,
+  .about-content h2,
+  .section-title h2 {
+    word-break:break-word;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .navbar {
+    padding:16px 4%;
+  }
+
+  .hero {
+    padding:45px 4%;
+    gap:30px;
+  }
+
+  .hero h1 {
+    font-size:30px;
+  }
+
+  .hero h3 {
+    font-size:20px;
+  }
+
+  .about,
+  .services,
+  .videos,
+  .appointment,
+  .contact {
+    padding:45px 4%;
+  }
+
+  .about-image img {
+    height:auto;
+    max-height:420px;
+  }
+
+  .contact-map iframe {
+    min-height:260px;
+  }
+
+  .video-card iframe {
+    height:200px;
+  }
+
+  .service-image {
+    height:180px;
+  }
+
+  .timing-box,
+  .quick-box,
+  .emergency-box,
+  .contact-card {
+    padding:22px;
+  }
+
+  .footer-container {
+    gap:30px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .ai-toggle {
+    right:14px;
+    bottom:14px;
+  }
+
+  .ai-chatbox {
+    width:calc(100% - 28px);
+    right:14px;
+    bottom:90px;
+    max-width:360px;
+  }
+}
+
